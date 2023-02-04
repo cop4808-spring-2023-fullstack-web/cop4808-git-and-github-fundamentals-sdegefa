@@ -9,6 +9,7 @@ const buttons = document.querySelectorAll('button');
 window.addEventListener('keydown', function(e){
     const key = document.querySelector(`button[data-key='${e.keyCode}']`);
     key.click();
+    
 });
 
 function updateDisplay() {
@@ -18,7 +19,6 @@ function updateDisplay() {
         display.innerText = displayValue.substring(0, 9);
     }
 }
-  
 updateDisplay();
 
 function clickButton() {
@@ -41,9 +41,14 @@ function clickButton() {
             } else if(buttons[i].classList.contains('sign')) {
                 inputSign(displayValue);
                 updateDisplay();
-            } else if(buttons[i].classList.contains('clear'))
+            } else if(buttons[i].classList.contains('clear')){
                 clearDisplay();
                 updateDisplay();
+            } else if(buttons[i].classList.contains('random')){
+                clearDisplay();
+                displayValue = roundAccurately(Math.random(), 15).toString()
+                updateDisplay();
+            }
         }
     )}
 }
