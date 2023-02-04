@@ -44,14 +44,17 @@ function clickButton() {
             } else if(buttons[i].classList.contains('clear')){
                 clearDisplay();
                 updateDisplay();
-            } else if(buttons[i].classList.contains('random')){
+            } else if(buttons[i].value ==('random')){
                 input_Rand();
                 updateDisplay();
-            } else if(buttons[i].classList.contains('lnx')){
+            } else if(buttons[i].value == ('ln')){
                 input_lnx(displayValue);
                 updateDisplay();
-            } else if(buttons[i].classList.contains('e')){
+            } else if(buttons[i].value ==('e')){
                 input_e(displayValue);
+                updateDisplay();
+            }else if(buttons[i].value ==('pi')){
+                inputOperand(roundAccurately(Math.PI, 8));
                 updateDisplay();
             }
             
@@ -63,7 +66,7 @@ clickButton();
 
 function inputOperand(operand) {
     if(firstOperator === null) {
-        if (operand == "pi"){displayValue = Math.PI;}
+        
         if(displayValue === '0' || displayValue === 0) {
             //1st click - handles first operand input
             displayValue = operand;
