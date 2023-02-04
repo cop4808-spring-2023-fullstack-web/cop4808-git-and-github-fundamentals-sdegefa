@@ -65,6 +65,7 @@ function clickButton() {
 clickButton();
 
 function inputOperand(operand) {
+    if(isNaN(displayValue)){clearDisplay()}
     if(firstOperator === null) {
         
         if(displayValue === '0' || displayValue === 0) {
