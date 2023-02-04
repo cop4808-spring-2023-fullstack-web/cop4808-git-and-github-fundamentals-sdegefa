@@ -45,10 +45,16 @@ function clickButton() {
                 clearDisplay();
                 updateDisplay();
             } else if(buttons[i].classList.contains('random')){
-                clearDisplay();
-                displayValue = roundAccurately(Math.random(), 15).toString()
+                input_Rand();
+                updateDisplay();
+            } else if(buttons[i].classList.contains('lnx')){
+                input_lnx(displayValue);
+                updateDisplay();
+            } else if(buttons[i].classList.contains('e')){
+                input_e(displayValue);
                 updateDisplay();
             }
+            
         }
     )}
 }
@@ -151,6 +157,18 @@ function inputPercent(num) {
 
 function inputSign(num) {
     displayValue = (num * -1).toString();
+}
+
+function input_Rand() {
+    displayValue = Math.random().toString();
+}
+
+function input_lnx(num) {
+    displayValue = roundAccurately(Math.log(displayValue), 15).toString()
+}
+
+function input_e(num) {
+    displayValue = roundAccurately(Math.exp(displayValue), 15).toString()
 }
 
 function clearDisplay() {
