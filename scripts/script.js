@@ -57,6 +57,7 @@ clickButton();
 
 function inputOperand(operand) {
     if(firstOperator === null) {
+        if (operand == "pi"){displayValue = Math.PI;}
         if(displayValue === '0' || displayValue === 0) {
             //1st click - handles first operand input
             displayValue = operand;
