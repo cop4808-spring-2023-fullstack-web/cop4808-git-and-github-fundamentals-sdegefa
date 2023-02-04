@@ -164,11 +164,14 @@ function input_Rand() {
 }
 
 function input_lnx(num) {
-    displayValue = roundAccurately(Math.log(displayValue), 15).toString()
+    if(num == 0){displayValue = '-_-'}
+    else{    
+        displayValue = roundAccurately(Math.log(num), 15).toString()
+    }
 }
 
 function input_e(num) {
-    displayValue = roundAccurately(Math.exp(displayValue), 15).toString()
+    displayValue = roundAccurately(Math.exp(num), 15).toString()
 }
 
 function clearDisplay() {
